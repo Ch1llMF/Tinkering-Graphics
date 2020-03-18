@@ -1,6 +1,7 @@
 import pygame as pg
 pg.init()
 
+pg.image.load("Colours.png")
 
 screen = pg.display.set_mode((800, 600))
 done = False
