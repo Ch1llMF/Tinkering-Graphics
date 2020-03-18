@@ -9,7 +9,7 @@ Orange = (255, 127, 39)
 
 def colourSwap(surf, from_, to_):
     arr = pg.PixelArray(surf)
-    arr.replace(Red, Blue)
+    arr.replace(Yellow, Blue)
     del arr
 
 class image:
@@ -22,7 +22,9 @@ class image:
     def draw(self, surf):
         surf.blit(self.image, self.rect)
 
-screen = pg.display.set_mode((800, 600))
+screen = pg.display.set_mode((1920, 1080))
+screen_rect = screen.get_rect()
+player = image(screen_rect)
 done = False
 while not done:
     for event in pg.event.get():
