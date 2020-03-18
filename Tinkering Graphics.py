@@ -12,7 +12,15 @@ def colourSwap(surf, from_, to_):
     arr.replace(Red, Blue)
     del arr
 
-pg.image.load("Colours.png")
+class image:
+    def __init__(self, screen_rect):
+        self.screen_rect = screen_rect
+        self.image = pg.image.load('Colours.png').convert()
+        self.rect = self.image.get_rect(center=self.screen_rect.center)
+        colourSwap(self.image, (0, 0, 0), (0, 0, 0))
+
+    def draw(self, surf):
+        surf.blit(self.image, self.rect)
 
 screen = pg.display.set_mode((800, 600))
 done = False
